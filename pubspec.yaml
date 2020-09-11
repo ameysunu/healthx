@@ -53,6 +53,10 @@ flutter:
     - images/google.png
     - images/home.png
     - images/water.png
+    - images/tacos.png
+    - images/burgers.png
+    - images/icecream.png
+    - images/pizza.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
