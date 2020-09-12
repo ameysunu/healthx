@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:healthx/login.dart';
+import 'package:healthx/maps/burgers.dart';
 import 'package:healthx/maps/icecream.dart';
 import 'package:healthx/maps/pizza.dart';
 import 'package:healthx/maps/tacos.dart';
@@ -362,54 +363,67 @@ class _HomeState extends State<Home> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(10.0),
-                      child: Card(
-                        color: Hexcolor('#E3E0F3'),
-                        child: Container(
-                          height: MediaQuery.of(context).size.height * 0.20,
-                          width: MediaQuery.of(context).size.width * 1,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Container(
-                                  height: 150,
-                                  width: 150,
-                                  child: Image.asset('images/burgers.png'),
+                      child: InkWell(
+                        child: Card(
+                          color: Hexcolor('#E3E0F3'),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height * 0.20,
+                            width: MediaQuery.of(context).size.width * 1,
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Container(
+                                    height: 150,
+                                    width: 150,
+                                    child: Image.asset('images/burgers.png'),
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(10.0, 10, 0, 0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Text(
-                                        "Burgers",
-                                        style: TextStyle(
-                                            fontFamily: 'Gotham', fontSize: 20),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 230,
-                                      child: Padding(
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(10.0, 10, 0, 0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
                                         padding: const EdgeInsets.all(10.0),
                                         child: Text(
-                                          "A sandwich consisting of one or more cooked patties of ground meat, between a bun and juivy fried to top it off.",
+                                          "Burgers",
                                           style: TextStyle(
                                               fontFamily: 'Gotham',
-                                              fontSize: 16),
+                                              fontSize: 20),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                      Container(
+                                        width: 230,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Text(
+                                            "A sandwich consisting of one or more cooked patties of ground meat, between a bun and juivy fried to top it off.",
+                                            style: TextStyle(
+                                                fontFamily: 'Gotham',
+                                                fontSize: 16),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return Burgers();
+                              },
+                            ),
+                          );
+                        },
                       ),
                     ),
                   ],
