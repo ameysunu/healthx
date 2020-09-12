@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:healthx/camera/chat.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 import 'package:image_picker/image_picker.dart';
@@ -56,6 +57,22 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Hexcolor('#FFDFCA'),
+        child: Icon(
+          Icons.chat,
+          color: Hexcolor('#5C6178'),
+        ),
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) {
+                return Bot();
+              },
+            ),
+          );
+        },
+      ),
       backgroundColor: Hexcolor('#F2ECFF'),
       body: SafeArea(
         child: Column(
