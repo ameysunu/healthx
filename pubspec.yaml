@@ -28,7 +28,6 @@ dependencies:
   google_sign_in: ^4.5.3
   hexcolor:
   cloud_firestore: ^0.14.0+2
-  camera: ^0.5.8+5
   path_provider: ^1.6.7
   intl: ^0.16.1
   firebase_ml_vision: ^0.9.3+8
@@ -69,6 +68,7 @@ flutter:
     - images/symptom.png
     - images/food.png
     - images/marker.bmp
+    - images/walk.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
