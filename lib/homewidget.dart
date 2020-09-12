@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:healthx/food.dart';
+import 'package:healthx/camera/cam.dart';
 import 'package:healthx/home.dart';
 import 'package:healthx/user.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -15,7 +15,7 @@ class _HomeWidgetState extends State<HomeWidget> {
 
   final List<Widget> _widgetOptions = [
     Home(),
-    Food(),
+    MyHomePage(),
     User(),
   ];
 
