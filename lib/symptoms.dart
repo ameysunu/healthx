@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthx/symplist.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -20,6 +21,21 @@ class _SymptomsState extends State<Symptoms> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.info_outline,
+              color: Colors.black,
+            ),
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) {
+                  return SympList();
+                },
+              ),
+            ),
+          ),
+        ],
         backgroundColor: Hexcolor('#FFE8F7'),
         elevation: 0,
         automaticallyImplyLeading: false,
