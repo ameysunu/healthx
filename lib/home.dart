@@ -2,6 +2,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:healthx/login.dart';
+import 'package:healthx/maps/icecream.dart';
+import 'package:healthx/maps/pizza.dart';
+import 'package:healthx/maps/tacos.dart';
 import 'package:healthx/symptoms.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -164,158 +167,197 @@ class _HomeState extends State<Home> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(10.0),
-                      child: Card(
-                        color: Hexcolor('#FFE694'),
-                        child: Container(
-                          height: MediaQuery.of(context).size.height * 0.20,
-                          width: MediaQuery.of(context).size.width * 1,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Container(
-                                  height: 150,
-                                  width: 150,
-                                  child: Image.asset('images/tacos.png'),
+                      child: InkWell(
+                        child: Card(
+                          color: Hexcolor('#FFE694'),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height * 0.20,
+                            width: MediaQuery.of(context).size.width * 1,
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Container(
+                                    height: 150,
+                                    width: 150,
+                                    child: Image.asset('images/tacos.png'),
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(10.0, 10, 0, 0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Text(
-                                        "Tacos",
-                                        style: TextStyle(
-                                            fontFamily: 'Gotham', fontSize: 20),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 230,
-                                      child: Padding(
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(10.0, 10, 0, 0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
                                         padding: const EdgeInsets.all(10.0),
                                         child: Text(
-                                          "A traditional Mexican dish consisting of a small hand-sized corn or wheat tortilla topped with a filling.",
+                                          "Tacos",
                                           style: TextStyle(
                                               fontFamily: 'Gotham',
-                                              fontSize: 16),
+                                              fontSize: 20),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                      Container(
+                                        width: 230,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Text(
+                                            "A traditional Mexican dish consisting of a small hand-sized corn or wheat tortilla topped with a filling.",
+                                            style: TextStyle(
+                                                fontFamily: 'Gotham',
+                                                fontSize: 16),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return Tacos();
+                              },
+                            ),
+                          );
+                        },
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(10.0),
-                      child: Card(
-                        color: Hexcolor('#EAC3C0'),
-                        child: Container(
-                          height: MediaQuery.of(context).size.height * 0.20,
-                          width: MediaQuery.of(context).size.width * 1,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Container(
-                                  height: 150,
-                                  width: 150,
-                                  child: Image.asset('images/pizza.png'),
+                      child: InkWell(
+                        child: Card(
+                          color: Hexcolor('#EAC3C0'),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height * 0.20,
+                            width: MediaQuery.of(context).size.width * 1,
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Container(
+                                    height: 150,
+                                    width: 150,
+                                    child: Image.asset('images/pizza.png'),
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(10.0, 10, 0, 0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Text(
-                                        "Pizza",
-                                        style: TextStyle(
-                                            fontFamily: 'Gotham', fontSize: 20),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 230,
-                                      child: Padding(
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(10.0, 10, 0, 0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
                                         padding: const EdgeInsets.all(10.0),
                                         child: Text(
-                                          "A savory dish consisting of a usually round topped with cheese, and other stuff.",
+                                          "Pizza",
                                           style: TextStyle(
                                               fontFamily: 'Gotham',
-                                              fontSize: 16),
+                                              fontSize: 20),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                      Container(
+                                        width: 230,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Text(
+                                            "A savory dish consisting of a usually round topped with cheese, and other stuff.",
+                                            style: TextStyle(
+                                                fontFamily: 'Gotham',
+                                                fontSize: 16),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return Pizza();
+                              },
+                            ),
+                          );
+                        },
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(10.0),
-                      child: Card(
-                        color: Hexcolor('#D6F4FF'),
-                        child: Container(
-                          height: MediaQuery.of(context).size.height * 0.20,
-                          width: MediaQuery.of(context).size.width * 1,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Container(
-                                  height: 150,
-                                  width: 150,
-                                  child: Image.asset('images/icecream.png'),
+                      child: InkWell(
+                        child: Card(
+                          color: Hexcolor('#D6F4FF'),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height * 0.20,
+                            width: MediaQuery.of(context).size.width * 1,
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Container(
+                                    height: 150,
+                                    width: 150,
+                                    child: Image.asset('images/icecream.png'),
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(10.0, 10, 0, 0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Text(
-                                        "Ice-Cream",
-                                        style: TextStyle(
-                                            fontFamily: 'Gotham', fontSize: 20),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 230,
-                                      child: Padding(
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(10.0, 10, 0, 0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
                                         padding: const EdgeInsets.all(10.0),
                                         child: Text(
-                                          "Who does'nt know an ice cream? A yummy desert to keep yourself happy, after or before a meal.",
+                                          "Ice-Cream",
                                           style: TextStyle(
                                               fontFamily: 'Gotham',
-                                              fontSize: 16),
+                                              fontSize: 20),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                      Container(
+                                        width: 230,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Text(
+                                            "Who does'nt know an ice cream? A yummy desert to keep yourself happy, after or before a meal.",
+                                            style: TextStyle(
+                                                fontFamily: 'Gotham',
+                                                fontSize: 16),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return Icecream();
+                              },
+                            ),
+                          );
+                        },
                       ),
                     ),
                     Padding(
