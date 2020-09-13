@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthx/bmi.dart';
 import 'package:healthx/login.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:pedometer/pedometer.dart';
@@ -164,31 +165,42 @@ class _UserState extends State<User> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.fromLTRB(10.0, 0, 10, 0),
-                    child: Card(
-                      color: Hexcolor('#FFE694'),
-                      child: Container(
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage("images/calculator.png"),
-                              fit: BoxFit.contain,
-                            ),
-                          ),
-                          height: MediaQuery.of(context).size.height * 0.24,
-                          width: MediaQuery.of(context).size.width * 0.43,
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Text(
-                                  "BMI Calculator",
-                                  style: TextStyle(
-                                      color: Hexcolor('#5C6178'),
-                                      fontFamily: 'Gotham',
-                                      fontSize: 20),
-                                ),
+                    child: InkWell(
+                      child: Card(
+                        color: Hexcolor('#FFE694'),
+                        child: Container(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage("images/calculator.png"),
+                                fit: BoxFit.contain,
                               ),
-                            ],
-                          )),
+                            ),
+                            height: MediaQuery.of(context).size.height * 0.24,
+                            width: MediaQuery.of(context).size.width * 0.43,
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Text(
+                                    "BMI Calculator",
+                                    style: TextStyle(
+                                        color: Hexcolor('#5C6178'),
+                                        fontFamily: 'Gotham',
+                                        fontSize: 20),
+                                  ),
+                                ),
+                              ],
+                            )),
+                      ),
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return BMI();
+                            },
+                          ),
+                        );
+                      },
                     ),
                   ),
                   Padding(
