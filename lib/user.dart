@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:healthx/login.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:pedometer/pedometer.dart';
+
+String formatDate(DateTime d) {
+  return d.toString().substring(0, 19);
+}
 
 class User extends StatefulWidget {
   @override
@@ -8,6 +13,57 @@ class User extends StatefulWidget {
 }
 
 class _UserState extends State<User> {
+  Stream<StepCount> _stepCountStream;
+  Stream<PedestrianStatus> _pedestrianStatusStream;
+  String _status = '?', _steps = '?';
+
+  @override
+  void initState() {
+    super.initState();
+    initPlatformState();
+  }
+
+  void onStepCount(StepCount event) {
+    print(event);
+    setState(() {
+      _steps = event.steps.toString();
+    });
+  }
+
+  void onPedestrianStatusChanged(PedestrianStatus event) {
+    print(event);
+    setState(() {
+      _status = event.status;
+    });
+  }
+
+  void onPedestrianStatusError(error) {
+    print('onPedestrianStatusError: $error');
+    setState(() {
+      _status = 'Pedestrian Status not available';
+    });
+    print(_status);
+  }
+
+  void onStepCountError(error) {
+    print('onStepCountError: $error');
+    setState(() {
+      _steps = 'Step Count not available';
+    });
+  }
+
+  void initPlatformState() {
+    _pedestrianStatusStream = Pedometer.pedestrianStatusStream;
+    _pedestrianStatusStream
+        .listen(onPedestrianStatusChanged)
+        .onError(onPedestrianStatusError);
+
+    _stepCountStream = Pedometer.stepCountStream;
+    _stepCountStream.listen(onStepCount).onError(onStepCountError);
+
+    if (!mounted) return;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +106,7 @@ class _UserState extends State<User> {
                               style: TextStyle(
                                   color: Colors.black,
                                   fontFamily: 'Gotham',
-                                  fontSize: 15),
+                                  fontSize: 14),
                             ),
                           ),
                         ],
@@ -79,7 +135,7 @@ class _UserState extends State<User> {
                             Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Text(
-                                "678/6000",
+                                "$_steps/6000",
                                 style: TextStyle(
                                     color: Hexcolor('#5C6178'),
                                     fontFamily: 'Gotham',
