@@ -50,19 +50,19 @@ class _IntroductionPageState extends State<IntroductionPage> {
           PageViewModel(
             title: "HealthX",
             body: "Check out, restaurants and health at the same time",
-            image: _buildImage('food'),
+            image: _buildImage('1'),
             decoration: pageDecoration,
           ),
           PageViewModel(
             title: "Find your restaurants",
             body: "Get your nearest favorite food place restaurants.",
-            image: _buildImage('google'),
+            image: _buildImage('2'),
             decoration: pageDecoration,
           ),
           PageViewModel(
             title: "Symptom Survey",
             body: "Fill out symptoms to get you assistance.",
-            image: _buildImage('tacos'),
+            image: _buildImage('3'),
             decoration: pageDecoration,
           ),
           PageViewModel(
@@ -73,7 +73,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                 Text("Welcome to HealthX", style: bodyStyle),
               ],
             ),
-            image: _buildImage('symptom'),
+            image: _buildImage('4'),
             decoration: pageDecoration,
           ),
         ],
@@ -107,6 +107,6 @@ class _IntroductionPageState extends State<IntroductionPage> {
 
 Widget _buildImage(String assetName) {
   return Align(
-      child: Image.asset('images/$assetName.png', width: 350.0),
+      child: Image.asset('images/introduction/$assetName.png', width: 350.0),
       alignment: Alignment.bottomCenter);
 }
