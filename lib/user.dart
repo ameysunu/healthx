@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:healthx/login.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:pedometer/pedometer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 String formatDate(DateTime d) {
   return d.toString().substring(0, 19);
@@ -192,31 +193,36 @@ class _UserState extends State<User> {
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(10.0, 0, 10, 0),
-                    child: Card(
-                      color: Hexcolor('#C8FCEA'),
-                      child: Container(
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage("images/newspaper.png"),
-                              fit: BoxFit.contain,
-                            ),
-                          ),
-                          height: MediaQuery.of(context).size.height * 0.24,
-                          width: MediaQuery.of(context).size.width * 0.43,
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Text(
-                                  "Health News",
-                                  style: TextStyle(
-                                      color: Hexcolor('#5C6178'),
-                                      fontFamily: 'Gotham',
-                                      fontSize: 20),
-                                ),
+                    child: InkWell(
+                      child: Card(
+                        color: Hexcolor('#C8FCEA'),
+                        child: Container(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage("images/newspaper.png"),
+                                fit: BoxFit.contain,
                               ),
-                            ],
-                          )),
+                            ),
+                            height: MediaQuery.of(context).size.height * 0.24,
+                            width: MediaQuery.of(context).size.width * 0.43,
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Text(
+                                    "Health News",
+                                    style: TextStyle(
+                                        color: Hexcolor('#5C6178'),
+                                        fontFamily: 'Gotham',
+                                        fontSize: 20),
+                                  ),
+                                ),
+                              ],
+                            )),
+                      ),
+                      onTap: () {
+                        _launchURL();
+                      },
                     ),
                   ),
                 ],
@@ -226,5 +232,14 @@ class _UserState extends State<User> {
         ),
       ),
     );
+  }
+}
+
+_launchURL() async {
+  const url = 'https://www.bbc.com/news/health';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
   }
 }
