@@ -1,5 +1,7 @@
 # Healthx
 
+[![Build Status](https://dev.azure.com/ameypsunu2017/HealthX/_apis/build/status/ameysunu.healthx?branchName=master)](https://dev.azure.com/ameypsunu2017/HealthX/_build/latest?definitionId=13&branchName=master)
+
 The app allows users to add symptoms if they have any, and on submitting it, the data gets saved so that hospitals can have a look and bring in assistance if necessary. Users can also add on glasses of water they have taken so, that they would know if they need to take more or less, however, the more you drink, it's better for the health. Users can also check out restaurants near their location under categories like Taquerias and Pizzerias so that there is less confusion about ending up at the right food place. The app also helps you get a text from images so that you can find its address easily, especially from banners and restaurant adverts. Users can also retrieve text from any image. It also has a chatbot which helps weary mood users give out recommendations for foods and various other things. The app also has a pedometer that helps track steps of users and a BMI calculator to give out your BMI, and motivate you to increase/decrease it. It also has a health news section to give you live news from BBC Health.
 
 ## Getting Started
